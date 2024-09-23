@@ -1,0 +1,669 @@
+/* configuracion por defecto general */
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+h3{
+    font-family: "Kanit", sans-serif;
+    
+}
+/* estilo barra de navegacion */
+li {
+    display: inline-block; 
+    margin: 10px; 
+}
+#btn{
+    background-color: #131418;
+}
+
+/* estilo portada */
+.portada {
+    position: relative; /* Necesario para que el pseudo-elemento ::before se posicione correctamente */
+    background-image: url("/img/portada.jpg"); /* Imagen de fondo para la portada */
+    background-size: cover; /* Hace que la imagen cubra todo el contenedor */
+    background-position: center; /* Centra la imagen en el contenedor */
+    height: 50rem; /* Altura del contenedor */
+    width: 100%; /* Ancho del contenedor */
+}
+
+.portada::before {
+    content: ""; /* Crea un pseudo-elemento vacío */
+    position: absolute; /* Posiciona el pseudo-elemento en relación al contenedor .portada */
+    top: 0; /* Ubica el pseudo-elemento en la parte superior del contenedor */
+    left: 0; /* Ubica el pseudo-elemento a la izquierda del contenedor */
+    width: 100%; /* Ancho completo del contenedor */
+    height: 100%; /* Altura completa del contenedor */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)); /* Degradado de negro con opacidad a transparente, de arriba hacia abajo */
+    pointer-events: none; /* Permite que los clics pasen a través del pseudo-elemento */
+    z-index: 1; /* Asegura que el gradiente esté sobre la imagen de fondo */
+}
+
+.portada h1 {
+    color: white; /* Color del texto */
+    font-size: 8rem; /* Tamaño del texto */
+    text-align: center; /* Centra el texto horizontalmente */
+    padding-top: 10%; /* Espacio superior para centrar el texto verticalmente */
+    position: relative; /* Asegura que el texto esté posicionado sobre el pseudo-elemento */
+    z-index: 2; /* Asegura que el texto esté por encima del gradiente */
+}
+
+
+
+/* section de productos */
+.titulo_categorias{
+    
+    color: rgb(0, 15, 97);
+    font-size: 4.5rem;
+    text-align: center;
+}
+.Productos {
+    background-image: url("/img/fondo_c.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Fija el fondo en su lugar */
+    text-align: center;
+}
+
+/* Contenedor de tarjetas */
+.categorias {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre tarjetas */
+    padding: 20px;
+    margin: auto; /* Centra el contenido */
+}
+
+/* Tarjetas */
+.tarjetas {
+    display: flex;
+    flex-direction: column; /* Para que la imagen y el contenido estén en columna */
+    align-items: center; /* Centra el contenido dentro de la tarjeta */
+    border-radius: 10px;
+    box-shadow: 0 0 3px 2px rgb(228, 228, 228);
+    background: linear-gradient(#f8f8f8, #0009839c);
+    margin: 10px;
+    padding: 10px;
+    max-width: 300px; /* Limita el ancho de cada tarjeta */
+    text-align: center;
+}
+
+/* Imagen en tarjetas */
+.Productos img{
+    width: 100%;
+    border-radius: 10px;
+    max-height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+
+/* Efecto hover en tarjeta */
+.tarjetas:hover {
+    box-shadow: 0 0 5px 2px black;
+}
+
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 480px) {
+    .categorias {
+        justify-content: center; /* Centra las tarjetas en pantallas pequeñas */
+    }
+
+    .tarjetas {
+        max-width: 90%; /* Aumenta el ancho máximo en pantallas pequeñas */
+    }
+    .titulo_categorias{
+        font-size: 2rem;
+    }
+}
+
+
+/* separador hr */
+.separador {
+    border: none; /* Elimina el estilo por defecto */
+    height: 2px; /* Altura de la línea */
+    background-color: #000; /* Color de la línea */
+    width: 80%; /* Ancho inicial de la línea */
+    margin: 15px auto; /* Centrar horizontalmente */
+}
+
+/* Estilo responsivo */
+@media (min-width: 400px) {
+    .separador {
+        width: 70%; /* Ajusta el ancho en pantallas pequeñas */
+    }
+}
+
+/* Sección de descripción general */
+.descripcion-seccion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+}
+
+/* Contenedor de cada bloque */
+.descripcion-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%; /*para regular el tamaño del div */
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* Estilo del contenido */
+.descripcion-contenido h2 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.descripcion-contenido p {
+    font-family: "Nunito", sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Iconos */
+.descripcion-icono i {
+    font-size: 50px;
+    color: #151f49;
+    margin-bottom: 15px;
+}
+
+/* Responsivo */
+
+@media (max-width: 480px) {
+    .descripcion-container {
+        width: 100%;
+    }
+
+    .descripcion-contenido h2 {
+        font-size: 20px;
+    }
+
+    .descripcion-contenido p {
+        font-size: 14px;
+    }
+
+    .descripcion-icono i {
+        font-size: 40px;
+    }
+}
+
+
+
+/* Estilos para la sección de ofertas */
+.titulo_ofertas{
+    font-family: "Bungee Tint", sans-serif;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 4rem;
+}
+.titulo_ofertas a{
+    text-decoration: none;
+}
+.article_ofertas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
+    grid-template-rows: auto;
+    gap: 50px;
+    padding: 20px;
+    grid-template-areas: 
+        "articulo1 articulo1 articulo2"
+        "articulo1 articulo1 articulo3"
+        "articulo4 articulo5 articulo6";
+}
+
+/* áreas para cada artículo */
+.articulos_1 {
+     grid-area: articulo1; }
+.articulos_2 {
+     grid-area: articulo2; }
+.articulos_3 {
+     grid-area: articulo3; }
+.articulos_4 {
+     grid-area: articulo4; }
+.articulos_5 {
+     grid-area: articulo5; }
+.articulos_6 {
+     grid-area: articulo6; }
+.articulos_7 {
+     grid-area: articulo7; }
+
+.articulos_1, .articulos_2, .articulos_3, 
+.articulos_4, .articulos_5, .articulos_6 {
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex; /* Usar flexbox para manejar contenido */
+    flex-direction: column; /* Colocar contenido en columna */
+    justify-content: space-between; /* Espacia el contenido */
+    height: 100%; /* Asegura que todos los artículos tengan la misma altura */
+}
+
+.articulos_1 img{
+    width: 100%;
+    height: 800px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.articulos_2 img, .articulos_3 img, 
+.articulos_4 img, .articulos_5 img, .articulos_6 img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;    
+}
+.descripcion_ofertas{
+    font-family: "Nunito", sans-serif;
+    font-size: 1rem;
+    text-align: center;
+}
+
+
+.btn_ver {
+    margin-top: 10px;
+    padding: 10px 20px;
+    width: 100%;
+    background-color: #000f389d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn_ver:hover {
+    background-color: #151f49;
+}
+
+/* Versión responsive para pantallas de 480px o menos */
+@media (max-width: 480px) {
+    .article_ofertas {
+        grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+        grid-template-areas: 
+            "articulo1"
+            "articulo2"
+            "articulo3"
+            "articulo4"
+            "articulo5"
+            "articulo6"
+            "articulo7";
+    }
+
+    .articulos_1, .articulos_2, .articulos_3, 
+    .articulos_4, .articulos_5, .articulos_6 {
+        height: auto; /* Permite que la altura se ajuste al contenido */
+    }
+
+h2 a {
+    font-size: 2rem;
+}
+}
+
+/* footer */
+footer{
+    background-color: #395d69;
+    text-align: center;
+}
+div ul{
+    text-align: center;
+}
+
+/* estilo de contactos y gps */
+
+.form{
+    background: linear-gradient(to bottom, #8b8b8b, #f0e4ff);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    
+}
+
+
+/* Contenedor del formulario */
+
+.contenedor-formulario {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    animation: fadeIn 0.8s ease-in-out;
+    margin-top: 3rem; /* Añade espacio arriba */
+    margin-bottom: 3rem; /* Añade espacio abajo */
+    
+}
+
+/* Título del formulario */
+.titulo-formulario {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Estilo de los campos */
+.campo {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 14px;
+    color: #2c3e50;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-texto, .input-comentario {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.input-texto:focus, .input-comentario:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Botón de enviar */
+.boton-enviar {
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton-enviar:hover {
+    background-color: #2980b9;
+}
+
+/* Animación del formulario al cargar */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos responsivos */
+
+@media (max-width: 480px) {
+    .contenedor-formulario {
+        padding: 20px;
+    }
+
+    .titulo-formulario {
+        font-size: 20px;
+    }
+}
+ /* gps */
+ /* Estilo para el título */
+.titulo-mapa {
+    text-align: center;
+    font-size: 2rem;
+    color: #0e1c36;
+    margin-top: 20px;
+}
+
+
+/* Estilo del iframe (mapa) */
+.mapa-embed {
+    width: 90%;
+    height: 450px;
+    border: 5px solid #9482c5; 
+    border-radius: 10px; 
+    display: block;
+    margin: 0 auto; 
+    margin-bottom: 3rem;
+}
+
+
+/* Estilos responsivos */
+
+@media (max-width: 400px) {
+    .mapa-embed {
+        height: 250px;
+    }
+}
+/* estilo de footer */
+/* Estilo general para el pie de página */
+.pie-pagina {
+    background: linear-gradient(to bottom, rgb(174, 175, 194), rgb(43, 43, 43)); /* Degradado de negro con opacidad a transparente, de arriba hacia abajo */
+    color: #ffffff;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Redes sociales */
+.redes-sociales {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo para los enlaces de redes sociales */
+.enlace-red {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.enlace-red i {
+    margin-right: 8px;
+}
+
+.enlace-red:hover {
+    color: #3498db; /* Cambio de color al pasar el ratón */
+}
+
+/* Información adicional */
+.informacion p {
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+/* Lista de enlaces */
+.lista-enlaces {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Enlaces del pie de página */
+.enlace-footer {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    
+}
+
+.enlace-footer:hover {
+    color: #3498db;
+}
+
+/* Responsividad */
+@media (max-width: 400px) {
+    .pie-pagina {
+        flex-direction: column;
+    }
+
+    .redes-sociales {
+        margin-bottom: 30px;
+    }
+}
+
+
+/* estilo para pa gainda de ofertas */
+.ofertas {
+    margin: 2% 5%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columnas */
+    grid-template-rows: auto auto auto auto; /* 4 filas dinámicas */
+    grid-template-areas: 
+      "titulo_o titulo_o titulo_o titulo_o titulo_o"
+      "oferta-destacada oferta-destacada oferta-destacada oferta-destacada oferta-destacada"
+      "oferta_1 oferta_2 oferta_3 oferta_4 oferta_5"
+      "oferta_6 oferta_7 oferta_8 oferta_9 oferta_10"
+      "oferta_11 oferta_12 oferta_13 oferta_14 oferta_15";
+    gap: 20px;
+    background-color: #f7f7f7;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+  
+  
+  
+  .oferta-destacada {
+    grid-area: oferta-destacada;
+  }
+  
+  .articulo img {
+    width: 100%; /* Hace que la imagen ocupe todo el ancho del contenedor */
+    height: auto;
+    object-fit: cover; /* Ajusta la imagen para que se vea completa, si es más grande que el contenedor */
+   
+  }
+  .titulo_o { grid-area: titulo_o;} /*nombramos a todas las areas para ubicarlas con grid*/
+  .oferta_1 { grid-area: oferta_1; }
+  .oferta_2 { grid-area: oferta_2; }
+  .oferta_3 { grid-area: oferta_3; }
+  .oferta_4 { grid-area: oferta_4; }
+  .oferta_5 { grid-area: oferta_5; }
+  .oferta_6 { grid-area: oferta_6; }
+  .oferta_7 { grid-area: oferta_7; }
+  .oferta_8 { grid-area: oferta_8; }
+  .oferta_9 { grid-area: oferta_9; }
+  .oferta_10 { grid-area: oferta_10; }
+  .oferta_11 { grid-area: oferta_11; }
+  .oferta_12 { grid-area: oferta_12; }
+  .oferta_13 { grid-area: oferta_13; }
+  .oferta_14 { grid-area: oferta_14; }
+  .oferta_15 { grid-area: oferta_15; }
+
+  .titulo_o{
+    font-family: "Bungee Tint", sans-serif;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 4rem;
+}
+
+  /* reponsivo para ofertas */
+  
+  @media (max-width: 480px) {
+    .ofertas {
+      grid-template-columns: 1fr; /* Una columna para pantallas móviles */
+      grid-template-areas: 
+        "titulo_o"
+        "oferta-destacada"
+        "oferta_1"
+        "oferta_2"
+        "oferta_3"
+        "oferta_4"
+        "oferta_5"
+        "oferta_6"
+        "oferta_7"
+        "oferta_8"
+        "oferta_9"
+        "oferta_10"
+        "oferta_11"
+        "oferta_12"
+        "oferta_13"
+        "oferta_14"
+        "oferta_15";
+    }
+  
+    /* Centramos el texto y botones en móviles */
+    .articulo {
+      text-align: center;
+    }
+  }
+  
+/* pagina de preguntas frecuentes */
+  .faq {
+    padding: 20px;
+    background: linear-gradient(135deg, #636363 0%, #c2e9fb 100%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.titulo-faq {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.contenedor-faq {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre los ítems */
+}
+
+.item-faq {
+    display: flex;
+    flex-direction: column; /* Ícono arriba, pregunta y respuesta abajo */
+    align-items: flex-start;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.item-faq i {
+    font-size: 28px;
+    color: #007bff; /* Color del icono */
+    margin-bottom: 10px; /* Espacio debajo del ícono */
+}
+
+.item-faq h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #3f3f3f;
+}
+
+.item-faq p {
+    margin: 5px 0 0;
+    color: #555;
+}
+
+/* fin de preguntas */
