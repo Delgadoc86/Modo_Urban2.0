@@ -1,13 +1,11 @@
 /* configuracion por defecto general */
-
-
+/* ordenado de nav a footer y al final los medias queries de todas las paginas identificadas por nombre segun paginas y clases */
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-
 
 h3{
     font-family: "Kanit", sans-serif;
@@ -52,8 +50,6 @@ li {
     position: relative; /* Asegura que el texto esté posicionado sobre el pseudo-elemento */
     z-index: 2; /* Asegura que el texto esté por encima del gradiente */
 }
-
-
 
 /* section de productos */
 .titulo_categorias{
@@ -103,26 +99,10 @@ li {
     margin-bottom: 10px;
 }
 
-
 /* Efecto hover en tarjeta */
 .tarjetas:hover {
     box-shadow: 0 0 5px 2px black;
 }
-
-/* Media Query para pantallas más pequeñas */
-@media (max-width: 480px) {
-    .categorias {
-        justify-content: center; /* Centra las tarjetas en pantallas pequeñas */
-    }
-
-    .tarjetas {
-        max-width: 90%; /* Aumenta el ancho máximo en pantallas pequeñas */
-    }
-    .titulo_categorias{
-        font-size: 2rem;
-    }
-}
-
 
 /* separador hr */
 .separador {
@@ -131,13 +111,6 @@ li {
     background-color: #000; /* Color de la línea */
     width: 80%; /* Ancho inicial de la línea */
     margin: 15px auto; /* Centrar horizontalmente */
-}
-
-/* Estilo responsivo */
-@media (min-width: 400px) {
-    .separador {
-        width: 70%; /* Ajusta el ancho en pantallas pequeñas */
-    }
 }
 
 /* Sección de descripción general */
@@ -182,28 +155,6 @@ li {
     color: #151f49;
     margin-bottom: 15px;
 }
-
-/* Responsivo */
-
-@media (max-width: 480px) {
-    .descripcion-container {
-        width: 100%;
-    }
-
-    .descripcion-contenido h2 {
-        font-size: 20px;
-    }
-
-    .descripcion-contenido p {
-        font-size: 14px;
-    }
-
-    .descripcion-icono i {
-        font-size: 40px;
-    }
-}
-
-
 
 /* Estilos para la sección de ofertas */
 .titulo_ofertas{
@@ -274,7 +225,6 @@ li {
     text-align: center;
 }
 
-
 .btn_ver {
     margin-top: 10px;
     padding: 10px 20px;
@@ -290,39 +240,6 @@ li {
     background-color: #151f49;
 }
 
-/* Versión responsive para pantallas de 480px o menos */
-@media (max-width: 480px) {
-    .article_ofertas {
-        grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
-        grid-template-areas: 
-            "articulo1"
-            "articulo2"
-            "articulo3"
-            "articulo4"
-            "articulo5"
-            "articulo6"
-            "articulo7";
-    }
-
-    .articulos_1, .articulos_2, .articulos_3, 
-    .articulos_4, .articulos_5, .articulos_6 {
-        height: auto; /* Permite que la altura se ajuste al contenido */
-    }
-
-h2 a {
-    font-size: 2rem;
-}
-}
-
-/* footer */
-footer{
-    background-color: #395d69;
-    text-align: center;
-}
-div ul{
-    text-align: center;
-}
-
 /* estilo de contactos y gps */
 
 .form{
@@ -336,7 +253,6 @@ div ul{
     height: 100%;
     
 }
-
 
 /* Contenedor del formulario */
 
@@ -416,26 +332,14 @@ label {
     }
 }
 
-/* Estilos responsivos */
-
-@media (max-width: 480px) {
-    .contenedor-formulario {
-        padding: 20px;
-    }
-
-    .titulo-formulario {
-        font-size: 20px;
-    }
-}
- /* gps */
- /* Estilo para el título */
+/* gps */
+/* Estilo para el título */
 .titulo-mapa {
     text-align: center;
     font-size: 2rem;
     color: #0e1c36;
     margin-top: 20px;
 }
-
 
 /* Estilo del iframe (mapa) */
 .mapa-embed {
@@ -448,14 +352,6 @@ label {
     margin-bottom: 3rem;
 }
 
-
-/* Estilos responsivos */
-
-@media (max-width: 400px) {
-    .mapa-embed {
-        height: 250px;
-    }
-}
 /* estilo de footer */
 /* Estilo general para el pie de página */
 .pie-pagina {
@@ -521,18 +417,6 @@ label {
     color: #3498db;
 }
 
-/* Responsividad */
-@media (max-width: 400px) {
-    .pie-pagina {
-        flex-direction: column;
-    }
-
-    .redes-sociales {
-        margin-bottom: 30px;
-    }
-}
-
-
 /* estilo para pa gainda de ofertas */
 .ofertas {
     margin: 2% 5%;
@@ -551,36 +435,34 @@ label {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
   
-  
-  
-  .oferta-destacada {
+.oferta-destacada {
     grid-area: oferta-destacada;
-  }
+}
   
-  .articulo img {
+.articulo img {
     width: 100%; /* Hace que la imagen ocupe todo el ancho del contenedor */
     height: auto;
     object-fit: cover; /* Ajusta la imagen para que se vea completa, si es más grande que el contenedor */
    
-  }
-  .titulo_o { grid-area: titulo_o;} /*nombramos a todas las areas para ubicarlas con grid*/
-  .oferta_1 { grid-area: oferta_1; }
-  .oferta_2 { grid-area: oferta_2; }
-  .oferta_3 { grid-area: oferta_3; }
-  .oferta_4 { grid-area: oferta_4; }
-  .oferta_5 { grid-area: oferta_5; }
-  .oferta_6 { grid-area: oferta_6; }
-  .oferta_7 { grid-area: oferta_7; }
-  .oferta_8 { grid-area: oferta_8; }
-  .oferta_9 { grid-area: oferta_9; }
-  .oferta_10 { grid-area: oferta_10; }
-  .oferta_11 { grid-area: oferta_11; }
-  .oferta_12 { grid-area: oferta_12; }
-  .oferta_13 { grid-area: oferta_13; }
-  .oferta_14 { grid-area: oferta_14; }
-  .oferta_15 { grid-area: oferta_15; }
+}
+.titulo_o { grid-area: titulo_o;} /*nombramos a todas las areas para ubicarlas con grid*/
+.oferta_1 { grid-area: oferta_1; }
+.oferta_2 { grid-area: oferta_2; }
+.oferta_3 { grid-area: oferta_3; }
+.oferta_4 { grid-area: oferta_4; }
+.oferta_5 { grid-area: oferta_5; }
+.oferta_6 { grid-area: oferta_6; }
+.oferta_7 { grid-area: oferta_7; }
+.oferta_8 { grid-area: oferta_8; }
+.oferta_9 { grid-area: oferta_9; }
+.oferta_10 { grid-area: oferta_10; }
+.oferta_11 { grid-area: oferta_11; }
+.oferta_12 { grid-area: oferta_12; }
+.oferta_13 { grid-area: oferta_13; }
+.oferta_14 { grid-area: oferta_14; }
+.oferta_15 { grid-area: oferta_15; }
 
-  .titulo_o{
+.titulo_o{
     font-family: "Bungee Tint", sans-serif;
     display: flex;
     justify-content: center;
@@ -588,39 +470,8 @@ label {
     font-size: 4rem;
 }
 
-  /* reponsivo para ofertas */
-  
-  @media (max-width: 480px) {
-    .ofertas {
-      grid-template-columns: 1fr; /* Una columna para pantallas móviles */
-      grid-template-areas: 
-        "titulo_o"
-        "oferta-destacada"
-        "oferta_1"
-        "oferta_2"
-        "oferta_3"
-        "oferta_4"
-        "oferta_5"
-        "oferta_6"
-        "oferta_7"
-        "oferta_8"
-        "oferta_9"
-        "oferta_10"
-        "oferta_11"
-        "oferta_12"
-        "oferta_13"
-        "oferta_14"
-        "oferta_15";
-    }
-  
-    /* Centramos el texto y botones en móviles */
-    .articulo {
-      text-align: center;
-    }
-  }
-  
 /* pagina de preguntas frecuentes */
-  .faq {
+.faq {
     padding: 20px;
     background: linear-gradient(135deg, #636363 0%, #c2e9fb 100%);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -667,3 +518,151 @@ label {
 }
 
 /* fin de preguntas */
+
+/* Media Query para pantallas más pequeñas reponsivos generales */
+
+
+/* reponsivo section categorias */
+@media (max-width: 480px) {
+    .categorias {
+        justify-content: center; /* Centra las tarjetas en pantallas pequeñas */
+    }
+
+    .tarjetas {
+        max-width: 90%; /* Aumenta el ancho máximo en pantallas pequeñas */
+    }
+    .titulo_categorias{
+        font-size: 3rem;
+        font-weight: 900;
+    }
+    /* fin de categorias */
+    /* reponsivo separador */
+    .separador {
+        width: 70%; /* Ajusta el ancho en pantallas pequeñas */
+    }
+    /* fin de separador */
+
+    /*reponsivo section iconos */
+    .descripcion-container {
+        width: 100%;
+    }
+
+    .descripcion-contenido h2 {
+        font-size: 20px;
+    }
+
+    .descripcion-contenido p {
+        font-size: 14px;
+    }
+
+    .descripcion-icono i {
+        font-size: 40px;
+    }
+    /* fin de section iconos */
+    
+    /* reponsivo section ofertas */
+    .article_ofertas {
+        grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+        grid-template-areas: 
+            "articulo1"
+            "articulo2"
+            "articulo3"
+            "articulo4"
+            "articulo5"
+            "articulo6"
+            "articulo7";
+    }
+    .ofertas {
+      grid-template-columns: 1fr; /* Una columna para pantallas móviles */
+      grid-template-areas: 
+        "titulo_o"
+        "oferta-destacada"
+        "oferta_1"
+        "oferta_2"
+        "oferta_3"
+        "oferta_4"
+        "oferta_5"
+        "oferta_6"
+        "oferta_7"
+        "oferta_8"
+        "oferta_9"
+        "oferta_10"
+        "oferta_11"
+        "oferta_12"
+        "oferta_13"
+        "oferta_14"
+        "oferta_15";
+    }
+  
+    /* Centramos el texto y botones en móviles */
+    .articulo {
+      text-align: center;
+    }
+
+    .articulos_1, .articulos_2, .articulos_3, 
+    .articulos_4, .articulos_5, .articulos_6 {
+        height: auto; /* Permite que la altura se ajuste al contenido */
+    }
+
+    h2 a {
+        font-size: 2rem;
+    }
+    /* fin de section ofertas */
+
+    /* reponsivo fomulario pagina contactos */
+
+    .contenedor-formulario {
+        padding: 20px;
+    }
+
+    .titulo-formulario {
+        font-size: 20px;
+    }
+    .mapa-embed {
+        height: 250px;
+    }
+    /* fin de fomulario pagina contactos */
+
+    /* pagina de ofertas */
+    .ofertas {
+        grid-template-columns: 1fr; /* Una columna para pantallas móviles */
+        grid-template-areas: 
+          "titulo_o"
+          "oferta-destacada"
+          "oferta_1"
+          "oferta_2"
+          "oferta_3"
+          "oferta_4"
+          "oferta_5"
+          "oferta_6"
+          "oferta_7"
+          "oferta_8"
+          "oferta_9"
+          "oferta_10"
+          "oferta_11"
+          "oferta_12"
+          "oferta_13"
+          "oferta_14"
+          "oferta_15";
+    }
+    
+      /* Centramos el texto y botones en móviles */
+    .articulo {
+        text-align: center;
+    }
+    /* fin de paginas ofertas */
+
+    /* pie de pagina (footer) */
+    .pie-pagina {
+        flex-direction: column;
+    }
+
+    .redes-sociales {
+        margin-bottom: 30px;
+    }
+}
+
+
+
+
+
