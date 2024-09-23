@@ -25,7 +25,7 @@ li {
 /* estilo portada */
 .portada {
     position: relative; /* Necesario para que el pseudo-elemento ::before se posicione correctamente */
-    background-image: url("/img/portada.jpg"); /* Imagen de fondo para la portada */
+    background-image: url("img/portada.jpg"); /* Imagen de fondo para la portada */
     background-size: cover; /* Hace que la imagen cubra todo el contenedor */
     background-position: center; /* Centra la imagen en el contenedor */
     height: 50rem; /* Altura del contenedor */
@@ -63,7 +63,7 @@ li {
     text-align: center;
 }
 .Productos {
-    background-image: url("/img/fondo_c.jpg");
+    background-image: url("img/fondo_c.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Fija el fondo en su lugar */
